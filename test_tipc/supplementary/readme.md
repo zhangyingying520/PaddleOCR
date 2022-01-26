@@ -28,23 +28,23 @@ pip3 install -r requirements.txt
 - 模式1：lite_train_lite_infer，使用少量数据训练，用于快速验证训练到预测的走通流程，不验证精度和速度；
 
 ```
-bash test_tipc/test_train_python.sh ./test_tipc/ch_ppocr_mobile_v2.0_det/train_infer_python.txt 'lite_train_lite_infer'
+bash test_tipc/test_train_python.sh ./test_tipc/train_infer_python.txt 'lite_train_lite_infer'
 ```
 
 - 模式2：whole_train_whole_infer，使用全量数据训练，用于快速验证训练到预测的走通流程，验证模型最终训练精度；
 
 ```
-bash test_tipc/test_train_python.sh ./test_tipc/ch_ppocr_mobile_v2.0_det/train_infer_python.txt 'whole_train_whole_infer'
+bash test_tipc/test_train_python.sh ./test_tipc/train_infer_python.txt 'whole_train_whole_infer'
 ```
 
 如果是运行量化裁剪等训练方式，需要使用不同的配置文件。量化训练的测试指令如下：
 ```
-bash test_tipc/test_train_python.sh ./test_tipc/ch_ppocr_mobile_v2.0_det/train_infer_python_PACT.txt 'lite_train_lite_infer'
+bash test_tipc/test_train_python.sh ./test_tipc/train_infer_python_PACT.txt 'lite_train_lite_infer'
 ```
 
 同理，FPGM裁剪的运行方式如下：
 ```
-bash test_tipc/test_train_python.sh ./test_tipc/ch_ppocr_mobile_v2.0_det/train_infer_python_FPGM.txt 'lite_train_lite_infer'
+bash test_tipc/test_train_python.sh ./test_tipc/train_infer_python_FPGM.txt 'lite_train_lite_infer'
 ```
 
 运行相应指令后，在`test_tipc/output`文件夹下自动会保存运行日志。如'lite_train_lite_infer'模式运行后，在test_tipc/extra_output文件夹有以下文件：
